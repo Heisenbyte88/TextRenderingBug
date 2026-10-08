@@ -1,0 +1,33 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:TextRenderingBug.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="200"
+        x:Class="TextRenderingBug.Views.MainWindow"
+        Width="300" Height="200" WindowStartupLocation="CenterScreen"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Text Rendering Bug">
+    <Grid x:Name="Root">
+        <StackPanel
+            Margin="16" Spacing="8"
+            HorizontalAlignment="Center" VerticalAlignment="Center">
+
+            <StackPanel>
+                <TextBlock Text="TextRenderingMode:" Margin="0 4" />
+                <ComboBox x:Name="TextRenderingModeComboBox" SelectedIndex="0" HorizontalAlignment="Stretch">
+                    <ComboBoxItem Content="{x:Static TextRenderingMode.Unspecified}" />
+                    <ComboBoxItem Content="{x:Static TextRenderingMode.Antialias}" />
+                    <ComboBoxItem Content="{x:Static TextRenderingMode.Alias}" />
+                    <ComboBoxItem Content="{x:Static TextRenderingMode.SubpixelAntialias}" />
+                </ComboBox>
+            </StackPanel>
+
+            <Border x:Name="DragBorder"
+                    Width="220" Height="60"
+                    Background="White" BorderBrush="Gray" BorderThickness="1">
+                <TextBlock Text="Drag me" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </Border>
+        </StackPanel>
+    </Grid>
+</Window>
